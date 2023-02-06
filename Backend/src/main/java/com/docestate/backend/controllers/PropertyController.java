@@ -17,6 +17,7 @@ public class PropertyController {
         this.propertyService = propertyService;
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping
     public List<Property> findAll() {
         return propertyService.getAllProperties();

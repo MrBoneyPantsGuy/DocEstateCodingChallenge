@@ -1,0 +1,13 @@
+mat-toolbar {
+  display: flex;
+  justify-content: center;
+  background-color: #0576b6;
+}
+
+.logo {
+  width: 100px;
+}
+
+.title {
+  font-size: larger;
+}

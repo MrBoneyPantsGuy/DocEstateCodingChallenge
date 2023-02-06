@@ -1,0 +1,18 @@
+<div>
+  <mat-grid-list cols="4">
+    <mat-grid-tile *ngFor="let property of properties">
+      <mat-card >
+        <mat-card-header>{{property.description}}</mat-card-header>
+        <mat-card-content>
+          <ul>
+            <li>{{property.address.street}}</li>
+            <li>{{property.address.number}}</li>
+            <li>{{property.address.zipCode}}</li>
+            <li>{{property.address.city}}</li>
+            <li>{{property.address.state}}</li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
