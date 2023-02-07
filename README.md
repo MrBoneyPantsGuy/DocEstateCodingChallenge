@@ -3,6 +3,9 @@
 ## List of Properties
 ![alt text](https://github.com/MrBoneyPantsGuy/DocEstateCodingChallenge/blob/main/Documentation/CodingChallenge1.png?raw=true)
 
+## Hover Effect
+![alt text](https://github.com/MrBoneyPantsGuy/DocEstateCodingChallenge/blob/main/Documentation/PropertyHoverEffect.gif?raw=true)
+
 ## Add new Property
 ![alt text](https://github.com/MrBoneyPantsGuy/DocEstateCodingChallenge/blob/main/Documentation/CodingChallenge3.png?raw=true)
 
