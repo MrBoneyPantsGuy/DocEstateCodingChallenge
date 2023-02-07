@@ -40,7 +40,7 @@ export class PropertyListComponent implements OnInit {
       if(result) {
         this.properties.push(result);
         this.stockimages.push(this.getStockImage());
-        this.propertyService.addProperty(result);
+        this.propertyService.addProperty(result).subscribe();
       }
     })
   }
@@ -57,6 +57,7 @@ export class PropertyListComponent implements OnInit {
         const index = this.properties.findIndex(props => props.id === result.id)
         this.properties[index] = result;
         this.propertyService.updateProperty(result).subscribe();
+        console.log(result);
       }
     })
   }

@@ -29,6 +29,8 @@ export class NewPropertyComponent implements OnInit {
   }
 
   save(): void {
+    // @ts-ignore
+    delete this.property.id;
     this.dialogRef.close(this.property);
   }
 
