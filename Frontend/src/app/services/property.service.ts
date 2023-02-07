@@ -16,4 +16,20 @@ export class PropertyService {
   getAllProperties(): Observable<Property[]> {
     return this.client.get<Property[]>(`${this.baseUrl}`);
   }
+
+  addProperty(property: Property): Observable<any> {
+    return this.client.post(`${this.baseUrl}`, property);
+  }
+
+  updateProperty(property: Property): Observable<any> {
+    return this.client.put(`${this.baseUrl}/${property.id}`, property);
+  }
+
+  deleteProperty(id: String): Observable<any> {
+    return this.client.delete(`${this.baseUrl}/${id}`);
+  }
+
+  getStockImage(): any {
+    return this.client.get('https://api.lorem.space/image/house?w=600&h=400');
+  }
 }

@@ -1,18 +1,19 @@
 <div>
-  <mat-grid-list cols="4">
-    <mat-grid-tile *ngFor="let property of properties">
-      <mat-card >
-        <mat-card-header>{{property.description}}</mat-card-header>
-        <mat-card-content>
-          <ul>
-            <li>{{property.address.street}}</li>
-            <li>{{property.address.number}}</li>
-            <li>{{property.address.zipCode}}</li>
-            <li>{{property.address.city}}</li>
-            <li>{{property.address.state}}</li>
-          </ul>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <main class="grid">
+    <article class="add" (click)="addProperty()">
+      <mat-icon class="plus">add</mat-icon>
+    </article>
+    <article *ngFor="let property of properties; let i = index">
+      <mat-icon class="delete" (click)="deleteProperty(property)">delete</mat-icon>
+      <img src="{{stockimages[i]}}" alt="Sample photo">
+      <div class="text">
+        <h2>{{property.description}}</h2>
+        <p>{{property.address.street}} {{property.address.number}}</p>
+        <p>{{property.address.zipCode}} {{property.address.city}}, {{property.address.state}}</p>
+        <div class="actions">
+          <button mat-raised-button color="primary" (click)="editProperty(property)">Edit</button>
+        </div>
+      </div>
+    </article>
+  </main>
 </div>

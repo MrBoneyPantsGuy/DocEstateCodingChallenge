@@ -1,0 +1,11 @@
+.mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.address > .item:nth-child(odd) {
+  margin-right: 1em;
+  width: calc(50% - 1em);
+}
