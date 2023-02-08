@@ -29,7 +29,7 @@ export class PropertyService {
   }
 
   deleteProperty(id: String): Observable<any> {
-    return this.client.delete(`${this.baseUrl}/${id}`);
+    return this.client.delete(`${this.baseUrl}/${id}`, {'headers': this.headers });
   }
 
   getStockImage(): any {
