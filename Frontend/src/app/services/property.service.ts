@@ -10,6 +10,8 @@ import { Property } from '../models/property';
 export class PropertyService {
   client: HttpClient;
   baseUrl = 'http://localhost:8080/api/v1/properties';
+
+  // Should at least be imported from a config on the file system, but exists for simplicity and portability here
   headers = new HttpHeaders({
     'Authorization' : 'Basic ' + btoa("Frontend:PatheticAuthentication"),
   });
@@ -30,9 +32,5 @@ export class PropertyService {
 
   deleteProperty(id: String): Observable<any> {
     return this.client.delete(`${this.baseUrl}/${id}`, {'headers': this.headers });
-  }
-
-  getStockImage(): any {
-    return this.client.get('https://api.lorem.space/image/house?w=600&h=400');
   }
 }

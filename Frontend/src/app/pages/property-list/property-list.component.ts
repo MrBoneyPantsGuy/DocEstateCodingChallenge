@@ -14,13 +14,11 @@ import { NewPropertyComponent } from '../../components/new-property/new-property
 })
 export class PropertyListComponent implements OnInit {
   propertyService: PropertyService;
-  properties: Property[];
-  stockimages: String[];
+  properties: Property[] = [];
+  stockimages: String[] = [];
 
   constructor(http: HttpClient, public dialog: MatDialog) {
     this.propertyService = new PropertyService(http);
-    this.stockimages = [];
-    this.properties = [];
   }
 
   async ngOnInit() {
@@ -36,13 +34,14 @@ export class PropertyListComponent implements OnInit {
       width: '500px',
       disableClose: true
     });
+
     dialogRef.afterClosed().subscribe(result => {
       if(result) {
         this.properties.push(result);
         this.stockimages.push(this.getStockImage());
         this.propertyService.addProperty(result).subscribe();
       }
-    })
+    });
   }
 
   editProperty(prop: Property): void {
@@ -57,9 +56,8 @@ export class PropertyListComponent implements OnInit {
         const index = this.properties.findIndex(props => props.id === result.id)
         this.properties[index] = result;
         this.propertyService.updateProperty(result).subscribe();
-        console.log(result);
       }
-    })
+    });
   }
 
   deleteProperty(prop: Property): void {
@@ -75,7 +73,7 @@ export class PropertyListComponent implements OnInit {
         this.stockimages.splice(index, 1);
         this.propertyService.deleteProperty(result.id).subscribe();
       }
-    })
+    });
   }
 
   getStockImage(): String {
